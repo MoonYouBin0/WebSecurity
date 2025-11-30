@@ -1,0 +1,299 @@
+/* 기본 리셋 및 폰트 설정 (한국어 가독성을 위해 system-ui 계열 폰트 사용) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
+    color: #1a1a1a;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 헤더 */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* 네비게이션 */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.main-nav ul li a:hover {
+    color: #000;
+}
+
+.main-nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #000;
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover:after {
+    width: 100%;
+    left: 0;
+    background: #000;
+}
+
+/* 사용자 액션 버튼/아이콘 */
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login, .btn-mypage, .btn-upload {
+    border: none;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-login {
+    background: #000;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #333;
+}
+
+.btn-mypage {
+    background: #f0f0f0;
+    color: #1a1a1a;
+}
+
+.btn-mypage:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-upload {
+    background: #007bff; /* 포인트 컬러 */
+    color: #fff;
+}
+
+.btn-upload:hover {
+    background-color: #0056b3;
+}
+
+.icon-link {
+    font-size: 18px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+    color: #666;
+}
+
+/* 메인 비주얼 섹션 */
+.hero-section {
+    /* 데모용 배경 이미지 설정 (실제 이미지 경로로 교체 필요) */
+    background: url('https://via.placeholder.com/1500x700/eeeeee/333333?text=CREATOR+MARKETPLACE+VISUAL') center center/cover no-repeat;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    box-shadow: inset 0 -100px 100px -100px rgba(0,0,0,0.5); /* 하단 그림자 효과 */
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 40px 60px;
+    border-radius: 8px;
+}
+
+.hero-content h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* 상품 카테고리 섹션 */
+.product-category {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.product-category h3 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.category-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden; /* 이미지 오버플로우 방지 */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-image {
+    width: 100%;
+    height: 200px; /* 카테고리 이미지 높이 통일 */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.category-item:hover .category-image {
+    transform: scale(1.05); /* 호버 시 확대 효과 */
+}
+
+.category-item h4 {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 15px 0;
+}
+
+/* 크리에이터 콜아웃 섹션 (새로 추가) */
+.creator-callout {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.creator-callout h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.creator-callout p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #444;
+}
+
+/* 푸터 */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ccc;
+}
