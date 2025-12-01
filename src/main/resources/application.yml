@@ -21,7 +21,7 @@ spring:
         path: /h2-console
 
 server:
-  port: 8082
+  port: 8080
 
 file:
   upload-dir: uploads
